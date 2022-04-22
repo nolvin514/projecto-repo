@@ -42,7 +42,17 @@
             }
         }
     }
-
+    public static function toOptionsArray($baseArray, $codeName, $textName, $selectedName, $selectedValue){
+        $tmpArray = array();
+        foreach($baseArray as $key=>$value){
+            $tmpArray[] = array(
+                $codeName => $key,
+                $textName => $value,
+                $selectedName => ($selectedValue == $value)?'selected':
+            );
+        }
+        return $tmpArray;
+    }
     private function __construct()
     {
       
